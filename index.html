@@ -3,92 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Raj's Big Data Portfolio</title>
     <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #34495e;
+            --accent: #3498db;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+        }
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            color: #333;
+            color: var(--dark);
+            background-color: #f5f7fa;
         }
         header {
-            background: #f4f4f4;
-            padding: 20px;
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
             text-align: center;
-            border-bottom: 1px solid #e4e4e4;
         }
         nav {
-            display: flex;
-            justify-content: center;
-            background: #333;
-            padding: 10px 0;
+            background: var(--secondary);
+            padding: 1rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
         nav a {
             color: white;
-            padding: 10px 20px;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
-            text-transform: uppercase;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin: 0 0.5rem;
+            border-radius: 4px;
         }
         nav a:hover {
-            background: #555;
+            background: var(--accent);
         }
         .container {
-            padding: 20px;
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
         }
         section {
-            margin: 20px 0;
-            padding: 20px;
-            border: 1px solid #e4e4e4;
-            border-radius: 5px;
+            margin-bottom: 3rem;
+        }
+        h1, h2, h3 {
+            color: var(--primary);
         }
         footer {
             text-align: center;
-            padding: 20px;
-            background: #f4f4f4;
-            border-top: 1px solid #e4e4e4;
+            padding: 2rem;
+            background: var(--primary);
+            color: white;
+        }
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <h1>Basavaraj Hiremath</h1>
+        <p> Program Manager | Consultant | Solutions Architect </p>
     </header>
     
     <nav>
-        <a href="#about">About Me</a>
-        <a href="big-data-architecture.html">Big Data Architecture</a>
-        <a href="#reference">Reference</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="big-data-architecture.html">Architecture</a>
+        <a href="#contact">Contact</a>
     </nav>
     
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
-            <p>This section contains information about your professional background, skills, and interests.</p>
-            <!-- Add your personal content here -->
+            <p>Experienced Big Data Architect with expertise in designing scalable data solutions using AWS, Apache Spark, and modern data architectures. Passionate about building efficient data pipelines and empowering organizations with data-driven insights.</p>
         </section>
         
-        <section id="architecture">
-            <h2>Big Data Architecture</h2>
-            <p>This section showcases your big data architecture designs and implementations.</p>
-            <!-- Add your architecture diagrams and descriptions here -->
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="project-card">
+                <h3>Real-time Data Pipeline</h3>
+                <p>Built a streaming data pipeline using Kinesis, Glue, and Redshift that processes 1M+ events daily.</p>
+                <a href="big-data-architecture.html">View Architecture →</a>
+            </div>
+            <div class="project-card">
+                <h3>Data Lake Implementation</h3>
+                <p>Designed and implemented a petabyte-scale data lake on AWS with proper governance and access controls.</p>
+                <a href="big-data-architecture.html">View Architecture →</a>
+            </div>
         </section>
         
-        <section id="reference">
-            <h2>Reference</h2>
-            <p>This section contains links to your work, publications, or other references.</p>
-            <!-- Add your references here -->
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Connect with me on <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn</a> or via email at your.email@example.com</p>
         </section>
     </div>
     
     <footer>
-        <p>&copy; <span id="year"></span> My Portfolio. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Rajesh Iremath. All rights reserved.</p>
     </footer>
 
     <script>
-        // Simple script to display current year
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>

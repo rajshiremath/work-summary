@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Data Architecture</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #34495e;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background: #3d566e;
+            border-radius: 4px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .diagram-container {
+            width: 100%;
+            height: 700px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Big Data Architecture Designs</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#reference">Reference</a>
+    </nav>
+    
+    <div class="container">
+        <h2>PostgreSQL to Data Mesh Architecture</h2>
+        <p>Below is an interactive diagram of a working big data architecture that streams data from PostgreSQL through Kinesis into a Data Mesh:</p>
+        
+        <div class="diagram-container">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                frameborder="0"
+                src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Postgress-Data.drawio&dark=auto#R%3Cmxfile%3E%3Cdiagram%20name%3D%22Page-1%22%20id%3D%22nu8QyHxomnrj8uDM8J5b%22%3E7Vzfc9o4EP5reCxjW%2FIPHgMJ7UM7lzadXvvEKFgYXYxFZBGgf%2F1JWAYbOal72Mi%2BaTJD0NoW0re7365WIgMwWe3eM7RefqIhjgeOFe4G4HbgiB9rJP5IyT6T2I7jZZKIkVDJToIH8hMroaWkGxLitHQjpzTmZF0WzmmS4DkvyRBjdFu%2BbUHj8qeuUYQ1wcMcxbr0bxLyZSYNXOsk%2F4BJtMw%2F2bbUlRXKb1aCdIlCui2IwN0ATBilPHu32k1wLNHLccmem75y9TgwhhNe54Gvf3uLh%2B%2F3mx%2FO5Lv3Yfd5%2FG39%2Bh1U%2BnlB8UbNWI2W73MIGN0kIZa92AMw3i4Jxw9rNJdXt0LrQrbkq1hdVt1hxvHu1YHax%2BkLw8F0hTnbi1vyB6BCLLeZHOztSQHAU7JlAXw3vxEppUfHvk%2B4iDcKmt%2BBye0gTEcMuoNTbutdwmnUPZhsp3swud2DCWig4FCQs2pSxpc0ogmK707S8Qk2S7RO93ykdK3A%2BgdzvleRBm04rYJSftDbQIpx0Q2b47fUrOIVYhHmb3lNtWIYjhEnL%2BVxNG%2BLminmEayAe%2FqE%2BXyZg7rhMUnw5BhxpXBBEz6hMWWHB4D4ncpBjCOGQoJP1xKaSDUtSBwXbp%2BMHPeAfsoZfcJnN4coXR5VKo2ciPj8ET3i%2BJ6mhBOaiGuPlHO6KtxwE5NIXuBS8WOkWnMxFszKKpdjV%2FYgPFO11eTlR6J0nU10QXZyHOM1JbKXuxfRWao6EeF9LR9Y7SKZCg3RNoVDFqazNU15xHD6HM9IknKUSJtpwmMdNyh5rOvrHusHusPmssZNye25vzo1%2FRWa9NcaoaPSQdt2ogr7B8MnMYyUpLrDT93ABfB1fmjCPTw4dNySh0DgaR7i%2BUNX95GgLfXBHqpvJlgZo5UpNQZDv6xG4AS5zoqKrMhNPNCSGr0%2BqfF5gzcVQfd2dONDu2XlOeWkcuRWaM4HVS4I2wpTvokwJQBj%2B%2B%2FyeTFX1fxRvHa7U51nrX2xdY8ZEXOXyj4IG4x5sGbM84zmqLYJlTWIclATZdsyCXPQJ1JLgc5od5YrYnyrjObnj%2BSxyAZVjOZVMdqorWg06hKjWYYZzQY1nS0wSmlGolCTMFt1Oc1s6KhRkWy7uhFM4HQ6%2Ff9VN0LE0SxGT3jGcGYvMzKXw22DaGFFPfKq1Y2cV%2FoRHqO4KuW%2FwnrNt8tVKbuiKhU4leFx1JLmKhTVL67Nyxi%2F5tqRUa6tsSomq8OGq846BeQOBHQYnDseuLdV5n9OaqrbW7KKxNBj8ihe0c8Nw3JKks6EwR88zZneSPHsVnLXRLzENBqmL1FDxg%2Bs85pTVVW2slTht6UVPa3%2FgrZCICEQfz6ivYD0XE8CA17WiqaDc6ZakTA8uE7VZlXZnRqA2rHKpQXf1nG2RxVAg9Y2P4MupeG%2FKiw0mQqOatKT4xulpxpnHboTwPGKGYnf9jFg5wSWF1HNFc3zWRQ0p8jrK0NJuqBspdi9byxmW6CMtu8Yp7EaUbxf6VOel%2Fyan9wL%2BUk9ei8TmEJWMCrr2LNguYtsBuqpk%2Fq0jjTf1HrKpqj1dDCE44QusI0a56C6Q6HG1kC25ZxxqAs1r77yIgjopzr65cWOX9eLjS6C8mEWXOTTNw363F7XjM5xmr4SbgpAPqL5U3RQx1%2BZf5UAvjDie9YwD%2FJvVFsC77i2uUogAkbiDt4RXkinRetH4copmZaNfaHRYkUb1K1og1cU%2FXvx64YxtC%2FcoJbjr4Y3GwJYMh7gWmfKz7psNhT1KptnOEyXZMH1cOTc%2BWActJ7SD61yOdXxRpqDV2f1%2BeGL5v1bz%2Bo7rMHnDZk%2FpRks5zq0rLE%2FbTmlcPPla87Qllf3EExrBF3jMFPPcoy6lYyMkhtfKdgOKFfPgXVWFqy9VPAs6%2B2eWl4qQNhzW6gfdY1WtUCvtqXMxkF45hOFiGcuDMK%2Bf80B1N2dMuwovapddMtRbK9iE%2BvK2aJnwk1OuyvFvZXCVouhQ071E5VLS5qXKc3IlliT3Fa36GQWZ9j3xLs2ztDoCVlohISM2POlC5zLeEMvomrA%2Fzm19x%2B%2FkyiwwjMXHA7txS%2BHD24iZ3Dts%2BS64kDGVQ%2Fswb5%2FawDWPWJrNrGGf47Ytuesahkwe95gtp%2FhkHDKZi%2BONYtVKbIJ1%2FVg11xX5%2F8veC28kSTRQO6tTsXrTfhuSefizWeJjWZy3T%2F7ATt39gMaPsLWrUVW3WMjttFcydXpVx2O%2BoTTZf%2FcwvOu5xWiefoHTFnl%2B%2FR%2FrMDdvw%3D%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E">
+            </iframe>
+        </div>
+        
+        <h3>Architecture Overview</h3>
+        <p>This working architecture demonstrates:</p>
+        <ul>
+            <li><strong>PostgreSQL</strong> as the operational data store</li>
+            <li><strong>Amazon Kinesis</strong> for real-time data streaming</li>
+            <li><strong>Data Mesh</strong> implementation for centralized data sharing</li>
+            <li><strong>QuickSight</strong> integration for analytics and reporting</li>
+        </ul>
+        
+        <h3>How to Use This Diagram</h3>
+        <p>Click the <strong>Edit</strong> button in the diagram toolbar to:</p>
+        <ul>
+            <li>Make a copy for your own modifications</li>
+            <li>Export as PNG/SVG for documentation</li>
+            <li>Explore component relationships</li>
+        </ul>
+    </div>
+    
+    <footer>
+        <p>&copy; <span id="year"></span> Big Data Architecture Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Auto-update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

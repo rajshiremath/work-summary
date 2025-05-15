@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Data Architecture</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f5f7fa;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        nav {
+            background: #34495e;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background: #3d566e;
+            border-radius: 4px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .diagram-container {
+            width: 100%;
+            height: 700px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Big Data Architecture Designs</h1>
+    </header>
+    
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#reference">Reference</a>
+    </nav>
+    
+    <div class="container">
+        <h2>PostgreSQL to Data Mesh Architecture</h2>
+        <p>Below is an interactive diagram of a working big data architecture that streams data from PostgreSQL through Kinesis into a Data Mesh:</p>
+        
+        <div class="diagram-container">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                frameborder="0"
+                src="https://viewer.diagrams.net/?tags=%7B%7D&lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Postgress-Data.drawio&dark=auto#R%3Cmxfile%3E%3Cdiagram%20name%3D%22Page-1%22%20id%3D%22nu8QyHxomnrj8uDM8J5b%22%3E7Vzfc9o4EP5reCxjW%2FIPHgMJ7UM7lzadXvvEKFgYXYxFZBGgf%2F1JWAYbOal72Mi%2B6WSGoLUtpG93v12tBAMwWe3eM7RefqIhjgeOFe4G4HbgOI7lBeKflOwziQ2Ak0kiRkIlOwkeyE%2BshJaSbkiI09KNnNKYk3VZOKdJgue8JEOM0W35tgWNy5%2B6RhHWBA9zFOvSv0nIl5k0cK2T%2FAMm0TL%2FZNtSV1Yov1kJ0iUK6bYgAncDMGGU8uzdajfBsUQvxyV7bvrK1ePAGE54nQe%2B%2Fu0tHr7fb344k%2B%2Feh93n8bf363dwlHXzguKNmrEaLd%2FnEDC6SUIse7EHYLxdEo4f1mgur26F1oVsyVexuqy6w4zj3asDtY%2FTF4aD6Qpzthe35A9AhVhuMznY25MCgKdkywL4bn4jUkqPjn2fcBFvFDS%2FA5PbQZiOGHQHp9zWu4TTqHsw2U73YHK7BxPQQMGhIGfVpIwvaUQTFN%2BdpOMTbJZone75SOlagfUP5nyvIg3acFoFpfygt4EU46IbNsdvqVnFK8QizN%2FymmrFMBwjTl7K42jeFjVTzCNYAff0CfP5Mgd1w2OS4Mkx4krhgiZ8QmPKDg8A8TeVgxhHDIUEn64lNJFqWpA4Ltw%2BGTnuAf2UM%2FqEz24OUbo8qlQaORHx%2BSN6xPE9TQknNBHXHinndFW44SYmkbzApeLHSLXmYiyYlVUux67sQXimaqvJy49E6Tqb6ILs5DjGa0pkL3cvorNUdSLC%2B1o%2BsNpFMhUaom0KhyxMZ2ua8ojh9DmekSTlKJE204THOm5Q8ljX1z3WD3SHzWWNm5Lbc391avorNOmvNUJHpYO27UQV9g%2BGT2IYKUl1h5%2B6gQvg6%2FzQhHt4cOi4JQ%2BBwNM8xPOHru4jQVvqgz1U30ywMkYrU2oMhn5ZjcAJcp0VFVmRm3igJTV6fVLj8wZvKoLu7ejGh3bLynPKSeXIrdCcD6pcELYVpnwTYUoAxvbf5fNirqr5o3jtdqc6z1r7YuseMyLmLpV9EDYY82DNmOcZzVFtEyprEOWgJsq2ZRLmoE%2BklgKd0e4sV8T4VhnNzx%2FJY5ENqhjNq2K0UVvRaNQlRrMMM5oNajpbYJTSjEShJmG26nKa2dBRoyLZdnUjmMDpdPr%2Fq26EiKNZjJ7wjOHMXmZkLofbBtHCinrkVasbOa%2F0IzxGcVXKf4X1mm%2BXq1J2RVUqcCrD46glzVUoql9cm5cxfs21I6NcW2NVTFaHDVeddQrIHQjoMDh3PHBvq8z%2FnNRUt7dkFYmhx%2BRRvKKfG4bllCSdCYM%2FeJozvZHi2a3krol4iWk0TF%2BihowfWOc1p6qqbGWpwm9LK3pa%2FwVthUBCIP59RHsB6bmeBAa8rBVNB%2BdMtSJheHCdqs2qsjs1ALVjlUsLvq3jbI8qgAatbX4GXUrDf1VYaDIVHNWkJ8c3Sk81zjp0J4DjFTMSv%2B1jwM4JLC%2Bimiua57MoaE6R11eGknRB2Uqxe99YzLZAGW3fMU5jNaJ4v9KnPC%2F5NT%2B5F%2FKTevReJjCFrGBU1rFnwXIX2QzUUyf1aR1pvqn1lE1R6%2BlgCMcJXWAbNc5BdYdCja2BbMs541AXal595UUQ0E919MuLHb%2BuFxtdBOXDLLjIp28a9Lm9rhmd4zR9JdwUgHxE86fooI6%2FMv8qAXxhxPesYR7k36i2BN5xbXOVQAR0brlGPr0jvJBOi9aPwpVTMi0b%2B0KjxYo2qFvRBq8o%2Bvfi1w1jaF%2B4QS3HXw1vNgSwZDzAtc6Un3XZbCjqVTbPcJguyYLr4ci588E4aD2lH1rlcqrjjTQHr87q88MXzfu3ntV3WIPPGzJ%2FSjNYznVoWWN%2F2nJK4ebL15yhLa%2FuIZjWCLrGYaae5Rh1KxkZJTe%2BUrAdUK6eA%2BusLFh7qeBZ1ts9tbxUgLDntlA%2F6hqtaoFebUuZjYPwzCcKEc9cGIR9%2F5oDqLs7ZdhRelW76Jaj2F7FJtaVs0XPhJucdleKeyuFrRZDh5zqJyqXljQvU5qRLbEmua1u0ckszrDviXdtnKHRE7LQCAkZsedLFziX8YZeRNWA%2F3Nq7z9%2BJ1FghWcuOBzai18OH9xEzuDaZ8l1xYGMqx7Yg33%2F1gCse8TWbGIN%2Fxyxbc9Z1TJg9rzBbD%2FDIeGUzV4caxarUmQTruvBrrmuzv9f8Fp4I0migdxbnYrXm%2FDdks7Fm88SG83kun%2F2A3bu7Ac0fIStW4ususdGbKO5kqvTrzoc9Qmny%2F65heddzytE8%2FQDTFnl%2B%2FQ7VuDuXw%3D%3D%3C%2Fdiagram%3E%3C%2Fmxfile%3E">
+            </iframe>
+        </div>
+        
+        <h3>Architecture Overview</h3>
+        <p>This working architecture demonstrates:</p>
+        <ul>
+            <li><strong>PostgreSQL</strong> as the operational data store</li>
+            <li><strong>Amazon Kinesis</strong> for real-time data streaming</li>
+            <li><strong>Data Mesh</strong> implementation for centralized data sharing</li>
+            <li><strong>QuickSight</strong> integration for analytics and reporting</li>
+        </ul>
+        
+        <h3>How to Use This Diagram</h3>
+        <p>Click the <strong>Edit</strong> button in the diagram toolbar to:</p>
+        <ul>
+            <li>Make a copy for your own modifications</li>
+            <li>Export as PNG/SVG for documentation</li>
+            <li>Explore component relationships</li>
+        </ul>
+    </div>
+    
+    <footer>
+        <p>&copy; <span id="year"></span> Basavaraj Hiremath. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Auto-update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

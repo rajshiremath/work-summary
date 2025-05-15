@@ -1,2 +1,2 @@
-# myfirst-tech-blog
-First Tech Blog 
+# Big Data Architecture (AWS)
+This doc covers a simple system design for a Big data program, using AWS native applications.  

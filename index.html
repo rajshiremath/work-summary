@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raj's Big Data Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
             --primary: #2c3e50;
@@ -11,6 +12,8 @@
             --accent: #3498db;
             --light: #ecf0f1;
             --dark: #2c3e50;
+            --gradient-start: #3498db;
+            --gradient-end: #2c3e50;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -21,10 +24,41 @@
             background-color: #f5f7fa;
         }
         header {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
             color: white;
-            padding: 2rem;
+            padding: 3rem 2rem;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            opacity: 0.2;
+            z-index: 0;
+        }
+        header h1 {
+            position: relative;
+            z-index: 1;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        header p {
+            position: relative;
+            z-index: 1;
+            font-size: 1.5rem;
+            opacity: 0.9;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         nav {
             background: var(--secondary);
@@ -33,6 +67,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         nav a {
             color: white;
@@ -42,88 +77,281 @@
             transition: all 0.3s ease;
             margin: 0 0.5rem;
             border-radius: 4px;
+            position: relative;
         }
         nav a:hover {
             background: var(--accent);
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after {
+            width: 100%;
         }
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 2rem;
             background: white;
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
         }
         section {
             margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-         h1, h2, h3 {
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h1, h2, h3 {
             color: var(--primary);
+        }
+        h2 {
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            border-radius: 3px;
         }
         footer {
             text-align: center;
             padding: 2rem;
             background: var(--primary);
             color: white;
+            position: relative;
+        }
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
         }
         .project-card {
             border: 1px solid #ddd;
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 1.5rem;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--accent);
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--accent);
+            transition: height 0.3s ease;
+        }
+        .project-card:hover::before {
+            height: 100%;
+        }
+        .project-card a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        .project-card a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        .project-card a i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        .project-card a:hover i {
+            transform: translateX(3px);
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-links a:hover {
+            transform: translateY(-5px);
+            color: var(--accent);
+        }
+        .skills-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .skill-tag {
+            background: #e0e0e0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .skill-tag:hover {
+            background: var(--accent);
+            color: white;
+            transform: scale(1.05);
+        }
+        .floating-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 99;
+        }
+        .floating-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            background: var(--primary);
         }
     </style>
 </head>
 <body>
     <header>
-        <h1> Basavaraj Hiremath </h1>
-        <p> Program Manager | Consultant | Solutions Architect </p>
+        <h1>Basavaraj Hiremath</h1>
+        <p>Program Manager | Consultant | Solutions Architect</p>
     </header>
     
     <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="big-data-architecture.html">Architecture</a>
-        <a href="#contact">Contact</a>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a>
+        <a href="big-data-architecture.html"><i class="fas fa-network-wired"></i> Architecture</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
     </nav>
     
     <div class="container">
         <section id="about">
             <h2>About Me</h2>
             <p>Experienced Big Data Architect with expertise in designing scalable data solutions using AWS, Apache Spark, and modern data architectures. Passionate about building efficient data pipelines and empowering organizations with data-driven insights.</p>
+            
+            <div class="skills-cloud">
+                <span class="skill-tag">AWS</span>
+                <span class="skill-tag">Apache Spark</span>
+                <span class="skill-tag">Data Architecture</span>
+                <span class="skill-tag">Kinesis</span>
+                <span class="skill-tag">Glue</span>
+                <span class="skill-tag">Redshift</span>
+                <span class="skill-tag">Data Lakes</span>
+                <span class="skill-tag">Data Governance</span>
+                <span class="skill-tag">Big Data</span>
+                <span class="skill-tag">Stream Processing</span>
+            </div>
         </section>
         
         <section id="projects">
             <h2>Featured Projects</h2>
             <div class="project-card">
                 <h3>Real-time Data Pipeline</h3>
-                <p>Built a streaming data pipeline using Kinesis, Glue, and Redshift that processes 1M+ events daily.</p>
-                <a href="big-data-architecture.html">View Architecture →</a>
+                <p>Built a streaming data pipeline using Kinesis, Glue, and Redshift that processes 1M+ events daily with sub-second latency, enabling real-time analytics for enterprise customers.</p>
+                <a href="big-data-architecture.html">View Architecture <i class="fas fa-arrow-right"></i></a>
             </div>
             <div class="project-card">
                 <h3>Data Mesh / Data Lake Implementation</h3>
-                <p>Designed and implemented a petabyte-scale data lake on AWS with governance and access controls.</p>
-                <a href="big-data-architecture-2.html">View Architecture →</a>
+                <p>Designed and implemented a petabyte-scale data lake on AWS with fine-grained governance and access controls, reducing data processing costs by 40% while improving accessibility.</p>
+                <a href="big-data-architecture-2.html">View Architecture <i class="fas fa-arrow-right"></i></a>
             </div>
         </section>
         
         <section id="contact">
             <h2>Get In Touch</h2>
-            <p>Connect with me on <a href="https://www.linkedin.com/in/basavarajhiremath/" target="_blank">LinkedIn</a> or via email at rajs_hiremath@yahoo.com</p>
+            <p>Let's connect to discuss how I can help with your data architecture needs or potential collaborations.</p>
+            <p>Email me at <a href="mailto:rajs_hiremath@yahoo.com">rajs_hiremath@yahoo.com</a> or connect through these platforms:</p>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/basavarajhiremath/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourusername" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/yourhandle" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://medium.com/@yourhandle" target="_blank" title="Medium"><i class="fab fa-medium"></i></a>
+            </div>
         </section>
     </div>
+    
+    <a href="#top" class="floating-btn" title="Back to Top"><i class="fas fa-arrow-up"></i></a>
     
     <footer>
         <p>&copy; <span id="year"></span> Basavaraj Hiremath. All rights reserved.</p>
     </footer>
 
     <script>
+        // Set current year
         document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Animate sections when they come into view
+        const sections = document.querySelectorAll('section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
